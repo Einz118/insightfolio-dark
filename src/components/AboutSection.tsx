@@ -1,32 +1,24 @@
 import { Users, Target, Heart, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 const AboutSection = () => {
-  const values = [
-    {
-      icon: <Lightbulb className="h-8 w-8 text-primary" />,
-      title: "Innovation",
-      description: "We continuously push the boundaries of educational technology to create meaningful solutions."
-    },
-    {
-      icon: <Users className="h-8 w-8 text-primary" />,
-      title: "Community",
-      description: "Building strong partnerships with educators, students, and communities to drive positive change."
-    },
-    {
-      icon: <Target className="h-8 w-8 text-primary" />,
-      title: "Excellence",
-      description: "Delivering high-quality educational experiences that exceed expectations and create lasting impact."
-    },
-    {
-      icon: <Heart className="h-8 w-8 text-primary" />,
-      title: "Accessibility",
-      description: "Making quality education accessible to learners from all backgrounds and circumstances."
-    }
-  ];
-
-  return (
-    <section id="about" className="section-padding bg-gradient-to-br from-secondary/50 to-muted/30">
+  const values = [{
+    icon: <Lightbulb className="h-8 w-8 text-primary" />,
+    title: "Innovation",
+    description: "We continuously push the boundaries of educational technology to create meaningful solutions."
+  }, {
+    icon: <Users className="h-8 w-8 text-primary" />,
+    title: "Community",
+    description: "Building strong partnerships with educators, students, and communities to drive positive change."
+  }, {
+    icon: <Target className="h-8 w-8 text-primary" />,
+    title: "Excellence",
+    description: "Delivering high-quality educational experiences that exceed expectations and create lasting impact."
+  }, {
+    icon: <Heart className="h-8 w-8 text-primary" />,
+    title: "Accessibility",
+    description: "Making quality education accessible to learners from all backgrounds and circumstances."
+  }];
+  return <section id="about" className="section-padding bg-gradient-to-br from-secondary/50 to-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
@@ -41,11 +33,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           <div className="animate-slide-up">
             <h3 className="text-3xl font-bold mb-6">Our Story</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              VerdEngineers was born from the belief that technology can bridge educational gaps and 
-              create opportunities for learners worldwide. Our journey began with small community workshops 
-              and has evolved into comprehensive educational platforms serving diverse populations.
-            </p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">VerdEngineers was born from the belief that hands-on STEM experience can bridge educational gaps and create opportunities for learners even in rural areas. Our journey began with small community events and has evolved into comprehensive educational platforms serving diverse populations.</p>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               We specialize in developing innovative learning solutions, conducting impactful community 
               outreach programs, and delivering professional training sessions that empower individuals 
@@ -59,8 +47,7 @@ const AboutSection = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            {values.map((value, index) => (
-              <Card key={index} className="card-gradient hover:scale-105 transition-transform duration-300">
+            {values.map((value, index) => <Card key={index} className="card-gradient hover:scale-105 transition-transform duration-300">
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
                     {value.icon}
@@ -68,8 +55,7 @@ const AboutSection = () => {
                   <h4 className="font-semibold mb-2">{value.title}</h4>
                   <p className="text-sm text-muted-foreground">{value.description}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
 
@@ -84,8 +70,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
