@@ -30,7 +30,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-            About <span className="text-glow">EduTech Solutions</span>
+            About <span className="text-glow">VerdEngineers</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up">
             Founded with a vision to revolutionize education through technology, we are a passionate team 
@@ -42,7 +42,7 @@ const AboutSection = () => {
           <div className="animate-slide-up">
             <h3 className="text-3xl font-bold mb-6">Our Story</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              EduTech Solutions was born from the belief that technology can bridge educational gaps and 
+              VerdEngineers was born from the belief that technology can bridge educational gaps and 
               create opportunities for learners worldwide. Our journey began with small community workshops 
               and has evolved into comprehensive educational platforms serving diverse populations.
             </p>

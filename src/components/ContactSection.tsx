@@ -58,19 +58,19 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email Us",
-      details: "hello@edutechsolutions.com",
-      action: "mailto:hello@edutechsolutions.com"
+      details: "hello@verdengineers.com",
+      action: "mailto:hello@verdengineers.com"
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      action: "tel:+15551234567"
+      details: "+84 936 279 11",
+      action: "tel:+84936279111"
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Visit Us",
-      details: "123 Innovation Drive, Tech City, TC 12345",
+      details: "Hanoi, Vietnam",
       action: "#"
     }
   ];
@@ -124,7 +124,7 @@ const ContactSection = () => {
               <CardContent>
                 <div className="space-y-3">
                   <a
-                    href="https://linkedin.com/company/edutechsolutions"
+                    href="https://linkedin.com/company/verdengineers"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
@@ -134,7 +134,7 @@ const ContactSection = () => {
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/founder"
+                    href="https://linkedin.com/in/verdengineers-founder"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
