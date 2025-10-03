@@ -10,7 +10,7 @@ const LecturesSection = () => {
       description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications and VEX AIM robotics kit.",
       image: lectureImage,
       duration: "2 hours",
-      attendees: 20 students, 4 teachers,
+      attendees: "20 students, 4 teachers",
       date: "September 17, 2025",
       topics: ["AI Fundamentals", "Educational Applications", "Future Trends"]
     },
