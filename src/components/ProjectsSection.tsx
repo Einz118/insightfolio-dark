@@ -7,7 +7,7 @@ import innovationImage from "@/assets/project-innovation.jpg";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Digital Literacy for All",
+      title: "Cosmosics: STEM fair",
       description: "Community outreach program providing digital literacy training to underserved populations, focusing on essential computer skills and internet safety.",
       image: communityImage,
       tags: ["Community Service", "Digital Literacy", "Outreach"],
