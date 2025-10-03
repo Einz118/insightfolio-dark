@@ -7,15 +7,15 @@ const LecturesSection = () => {
   const lectures = [
     {
       title: "Introduction to AI and VEX AIM",
-      description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications in modern educational settings.",
+      description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications and VEX AIM robotics kit.",
       image: lectureImage,
       duration: "2 hours",
-      attendees: 45,
-      date: "March 15, 2024",
+      attendees: 20 students, 4 teachers,
+      date: "September 17, 2025",
       topics: ["AI Fundamentals", "Educational Applications", "Future Trends"]
     },
     {
-      title: "Digital Transformation in Learning",
+      title: "Programming in VEX AIM",
       description: "Interactive session exploring how digital technologies are reshaping traditional educational methodologies and practices.",
       image: lectureImage,
       duration: "1.5 hours",
