@@ -6,7 +6,7 @@ import lectureImage from "@/assets/lecture-session-1.jpg";
 const LecturesSection = () => {
   const lectures = [
     {
-      title: "Introduction to AI in Education",
+      title: "Introduction to AI and VEX AIM",
       description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications in modern educational settings.",
       image: lectureImage,
       duration: "2 hours",
