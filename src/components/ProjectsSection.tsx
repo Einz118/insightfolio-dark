@@ -108,15 +108,23 @@ const ProjectsSection = () => {
           <p className="text-muted-foreground mb-6">
             Want to collaborate on a project or learn more about our community initiatives?
           </p>
-          <Button 
-            className="btn-hero"
-            onClick={() => {
-              const element = document.getElementById("contact");
-              if (element) element.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Get In Touch
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button 
+              className="btn-hero"
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Get In Touch
+            </Button>
+            <Button 
+              className="btn-hero"
+              onClick={() => window.location.href = '/gallery'}
+            >
+              Gallery
+            </Button>
+          </div>
         </div>
       </div>
     </section>
