@@ -1,7 +1,7 @@
 import { ExternalLink, Users, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import communityImage from "@/assets/community-service-1.jpg";
+import cosmosicsImage from "@/assets/cms24.2.jpg";
 import innovationImage from "@/assets/project-innovation.jpg";
 
 const ProjectsSection = () => {
@@ -9,7 +9,7 @@ const ProjectsSection = () => {
     {
       title: "Cosmosics: STEM fair",
       description: "Community outreach program providing digital literacy training to underserved populations, focusing on essential computer skills and internet safety.",
-      image: communityImage,
+      image: cosmosicsImage,
       tags: ["Community Service", "Digital Literacy", "Outreach"],
       stats: {
         participants: "150+",

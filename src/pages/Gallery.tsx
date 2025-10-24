@@ -1,34 +1,70 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import communityImage from "@/assets/community-service-1.jpg";
-import heroImage from "@/assets/hero-image.jpg";
-import lectureImage from "@/assets/lecture-session-1.jpg";
-import innovationImage from "@/assets/project-innovation.jpg";
+import cms242 from "@/assets/cms24.2.jpg";
+import cms243 from "@/assets/cms24.3.jpg";
+import cms252 from "@/assets/cms25.2.jpg";
+import cms25 from "@/assets/cms25.jpg";
+import dsc00977 from "@/assets/DSC00977.jpg";
+import dsc01148 from "@/assets/DSC01148.jpg";
+import dsc01265 from "@/assets/DSC01265.jpg";
+import img6242 from "@/assets/IMG_6242.jpg";
+import img6267 from "@/assets/IMG_6267.jpg";
+import img6368 from "@/assets/IMG_6368.jpg";
 
 const Gallery = () => {
   const navigate = useNavigate();
 
   const galleryImages = [
     {
-      src: communityImage,
-      title: "Community Service Initiative",
-      description: "Digital literacy training program"
+      src: cms242,
+      title: "Cosmosics Award Ceremony",
+      description: "Receiving recognition for STEM excellence"
     },
     {
-      src: innovationImage,
-      title: "EdTech Innovation Lab",
-      description: "Collaborative workspace for educators"
+      src: dsc01265,
+      title: "Cosmosics Team & Organizers",
+      description: "Large group photo with all participants and organizers"
     },
     {
-      src: lectureImage,
-      title: "AI & Robotics Workshop",
-      description: "Educational lecture session"
+      src: img6267,
+      title: "STEM Fair Award Winners",
+      description: "Award ceremony on stage at the STEM fair"
     },
     {
-      src: heroImage,
-      title: "VerdEngineers Team",
-      description: "Our team in action"
+      src: img6242,
+      title: "Robotics Workshop",
+      description: "Students working with robotics technology"
+    },
+    {
+      src: img6368,
+      title: "Robot Soccer Competition",
+      description: "Students competing in robot soccer tournament"
+    },
+    {
+      src: cms25,
+      title: "Classroom Collaboration",
+      description: "Students working together on STEM projects"
+    },
+    {
+      src: cms252,
+      title: "Tech Presentation",
+      description: "Students presenting their technical projects"
+    },
+    {
+      src: dsc00977,
+      title: "Outdoor STEM Activity",
+      description: "Hands-on outdoor engineering challenge"
+    },
+    {
+      src: dsc01148,
+      title: "Cultural & Innovation Booth",
+      description: "Showcasing cultural projects and innovations"
+    },
+    {
+      src: cms243,
+      title: "Student Engagement",
+      description: "Students gathering at the STEM fair venue"
     }
   ];
 
