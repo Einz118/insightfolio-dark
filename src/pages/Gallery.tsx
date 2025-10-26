@@ -11,6 +11,14 @@ import dsc01265 from "@/assets/DSC01265.jpg";
 import img6242 from "@/assets/IMG_6242.jpg";
 import img6267 from "@/assets/IMG_6267.jpg";
 import img6368 from "@/assets/IMG_6368.jpg";
+import img6148 from "@/assets/IMG_6148.jpg";
+import img6173 from "@/assets/IMG_6173.jpg";
+import img6237 from "@/assets/IMG_6237.jpg";
+import img62422 from "@/assets/IMG_6242-2.jpg";
+import img6250 from "@/assets/IMG_6250.jpg";
+import img6256 from "@/assets/IMG_6256.jpg";
+import img6299 from "@/assets/IMG_6299.jpg";
+import img6300 from "@/assets/IMG_6300.jpg";
 
 const Gallery = () => {
   const navigate = useNavigate();
@@ -65,6 +73,46 @@ const Gallery = () => {
       src: cms243,
       title: "Student Engagement",
       description: "Students gathering at the STEM fair venue"
+    },
+    {
+      src: img6148,
+      title: "Hands-on Science Activity",
+      description: "Students participating in interactive science experiments"
+    },
+    {
+      src: img6173,
+      title: "Robot Competition Arena",
+      description: "Competitive robotics event with spectators"
+    },
+    {
+      src: img6237,
+      title: "Youth Education Outreach",
+      description: "Teaching younger students about STEM concepts"
+    },
+    {
+      src: img62422,
+      title: "Robotics Team Demo",
+      description: "Students demonstrating their robot project"
+    },
+    {
+      src: img6250,
+      title: "Interactive Fair Booth",
+      description: "Busy STEM fair booth with student demonstrations"
+    },
+    {
+      src: img6256,
+      title: "Science Experiment Showcase",
+      description: "Students presenting chemistry and physics experiments"
+    },
+    {
+      src: img6299,
+      title: "Robot Competition Showcase",
+      description: "Robot soccer tournament with audience participation"
+    },
+    {
+      src: img6300,
+      title: "Creative Workshop Station",
+      description: "Students leading hands-on craft and engineering activities"
     }
   ];
 
