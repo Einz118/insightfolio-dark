@@ -19,6 +19,14 @@ import img6250 from "@/assets/IMG_6250.jpg";
 import img6256 from "@/assets/IMG_6256.jpg";
 import img6299 from "@/assets/IMG_6299.jpg";
 import img6300 from "@/assets/IMG_6300.jpg";
+import cms251 from "@/assets/cms25.1.jpg";
+import cms2522 from "@/assets/cms25.2-2.jpg";
+import dsc009772 from "@/assets/DSC00977-2.jpg";
+import img61482 from "@/assets/IMG_6148-2.jpg";
+import img6183 from "@/assets/IMG_6183.jpg";
+import img62562 from "@/assets/IMG_6256-2.jpg";
+import evg2524 from "@/assets/evg25.24.jpg";
+import evg2529 from "@/assets/evg25.29.jpg";
 
 const Gallery = () => {
   const navigate = useNavigate();
@@ -113,6 +121,46 @@ const Gallery = () => {
       src: img6300,
       title: "Creative Workshop Station",
       description: "Students leading hands-on craft and engineering activities"
+    },
+    {
+      src: cms251,
+      title: "Classroom Presentation",
+      description: "Student presenting technical concepts to peers"
+    },
+    {
+      src: cms2522,
+      title: "Interactive Learning Session",
+      description: "Collaborative problem-solving in classroom setting"
+    },
+    {
+      src: dsc009772,
+      title: "Community STEM Outreach",
+      description: "Teaching science experiments to younger students"
+    },
+    {
+      src: img61482,
+      title: "Hands-on Chemistry Demo",
+      description: "Interactive chemistry demonstration at community event"
+    },
+    {
+      src: img6183,
+      title: "STEM Fair Exhibition Booth",
+      description: "Students showcasing robotics projects at fair"
+    },
+    {
+      src: img62562,
+      title: "Science Experiment Fair",
+      description: "Interactive science demonstrations with community engagement"
+    },
+    {
+      src: evg2524,
+      title: "Youth Robotics Workshop",
+      description: "Teaching young children robotics fundamentals"
+    },
+    {
+      src: evg2529,
+      title: "Student Achievement Celebration",
+      description: "Recognizing excellence in STEM competitions"
     }
   ];
 

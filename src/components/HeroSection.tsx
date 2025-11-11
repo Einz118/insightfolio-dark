@@ -1,6 +1,15 @@
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import cms251 from "@/assets/cms25.1.jpg";
+import cms2522 from "@/assets/cms25.2-2.jpg";
+import dsc009772 from "@/assets/DSC00977-2.jpg";
+import img61482 from "@/assets/IMG_6148-2.jpg";
+import img6183 from "@/assets/IMG_6183.jpg";
+import img62562 from "@/assets/IMG_6256-2.jpg";
+import evg2524 from "@/assets/evg25.24.jpg";
+import evg2529 from "@/assets/evg25.29.jpg";
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -10,10 +19,45 @@ const HeroSection = () => {
       });
     }
   };
+
+  const heroImages = [
+    { src: cms251, alt: "Classroom Presentation" },
+    { src: cms2522, alt: "Interactive Learning Session" },
+    { src: dsc009772, alt: "Community STEM Outreach" },
+    { src: img61482, alt: "Hands-on Chemistry Demo" },
+    { src: img6183, alt: "STEM Fair Exhibition" },
+    { src: img62562, alt: "Science Experiment Fair" },
+    { src: evg2524, alt: "Youth Robotics Workshop" },
+    { src: evg2529, alt: "Student Achievement" }
+  ];
+
   return <section id="home" className="relative min-h-screen flex items-center section-padding overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Carousel with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Educational Technology Innovation" className="w-full h-full object-cover opacity-30" />
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-screen">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-full object-cover opacity-30" 
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90" />
       </div>
 
