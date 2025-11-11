@@ -2,13 +2,15 @@ import { Play, Clock, Users, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import lectureImage from "@/assets/lecture-session-1.jpg";
+import aiVexImage from "@/assets/cms25.1-2.jpg";
+import communityImage from "@/assets/IMG_6299-2.jpg";
 
 const LecturesSection = () => {
   const lectures = [
     {
       title: "Introduction to AI and VEX AIM",
       description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications and VEX AIM robotics kit.",
-      image: lectureImage,
+      image: aiVexImage,
       duration: "2 hours",
       attendees: "20 students, 4 teachers",
       date: "September 17, 2025",
@@ -26,7 +28,7 @@ const LecturesSection = () => {
     {
       title: "Building Inclusive Online Communities",
       description: "Practical workshop on creating and maintaining inclusive digital learning environments that foster collaboration.",
-      image: lectureImage,
+      image: communityImage,
       duration: "3 hours",
       attendees: 52,
       date: "February 28, 2024",
