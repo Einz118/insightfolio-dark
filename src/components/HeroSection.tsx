@@ -37,31 +37,6 @@ const HeroSection = () => {
   ];
 
   return <section id="home" className="relative min-h-screen flex items-center section-padding overflow-hidden">
-      {/* Background Carousel with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[plugin.current]}
-          className="w-full h-full"
-        >
-          <CarouselContent className="h-screen">
-            {heroImages.map((image, index) => (
-              <CarouselItem key={index} className="h-full">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-full object-cover opacity-30" 
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90" />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="animate-fade-in">
@@ -101,11 +76,31 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Animated Elements */}
+        {/* Carousel in Green Box */}
         <div className="hidden lg:block relative">
-          <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl backdrop-blur-sm border border-primary/20 animate-float" style={{
-          animation: "float 6s ease-in-out infinite"
-        }}>
+          <div className="w-full h-96 rounded-3xl overflow-hidden border border-primary/20 animate-float" style={{
+            animation: "float 6s ease-in-out infinite"
+          }}>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[plugin.current]}
+              className="w-full h-full"
+            >
+              <CarouselContent className="h-full">
+                {heroImages.map((image, index) => (
+                  <CarouselItem key={index} className="h-full">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
           </div>
           <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/30 rounded-full blur-xl animate-pulse" />
           <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-xl animate-pulse delay-75" />

@@ -4,6 +4,7 @@ import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import LecturesSection from "@/components/LecturesSection";
 import ContactSection from "@/components/ContactSection";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -25,6 +26,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
+      
+      <ScrollToTop />
     </div>
   );
 };
