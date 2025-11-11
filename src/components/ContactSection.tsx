@@ -134,7 +134,7 @@ const ContactSection = () => {
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/verdengineers-founder"
+                    href="https://www.linkedin.com/in/huy-anh-nguyen-638197326"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
