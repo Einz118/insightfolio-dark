@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import Navigation from "@/components/Navigation";
 import cms242 from "@/assets/cms24.2.jpg";
 import cms243 from "@/assets/cms24.3.jpg";
 import cms252 from "@/assets/cms25.2.jpg";

@@ -58,14 +58,14 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email Us",
-      details: "hello@verdengineers.com",
-      action: "mailto:hello@verdengineers.com"
+      details: "contact@verdengineers.com",
+      action: "mailto:contact@verdengineers.com"
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Call Us",
-      details: "+84 936 279 11",
-      action: "tel:+84936279111"
+      details: "+84 936 279 118",
+      action: "tel:+84936279118"
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,

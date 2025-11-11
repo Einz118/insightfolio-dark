@@ -19,14 +19,14 @@ const ProjectsSection = () => {
       link: "#"
     },
     {
-      title: "EdTech Innovation Lab",
-      description: "Collaborative workspace where educators and technologists develop cutting-edge learning tools and platforms for modern educational challenges.",
+      title: "VEX AIM & AI Application Webinar",
+      description: "Collaborative webinar where educators and students learn to programme VEX AIM and utilizing AI application",
       image: innovationImage,
-      tags: ["Innovation", "R&D", "Collaboration"],
+      tags: ["Community", "AI", "Collaboration"],
       stats: {
-        participants: "50+",
-        duration: "Ongoing",
-        locations: "Tech Hub"
+        participants: "40+",
+        duration: "2 weeks",
+        locations: "Online Platform"
       },
       link: "#"
     }
