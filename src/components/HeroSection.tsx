@@ -2,6 +2,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 import cms251 from "@/assets/cms25.1.jpg";
 import cms2522 from "@/assets/cms25.2-2.jpg";
 import dsc009772 from "@/assets/DSC00977-2.jpg";
@@ -11,6 +12,10 @@ import img62562 from "@/assets/IMG_6256-2.jpg";
 import evg2524 from "@/assets/evg25.24.jpg";
 import evg2529 from "@/assets/evg25.29.jpg";
 const HeroSection = () => {
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  );
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -39,11 +44,7 @@ const HeroSection = () => {
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-            }),
-          ]}
+          plugins={[plugin.current]}
           className="w-full h-full"
         >
           <CarouselContent className="h-screen">
