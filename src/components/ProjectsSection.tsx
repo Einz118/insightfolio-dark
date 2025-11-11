@@ -1,8 +1,8 @@
 import { ExternalLink, Users, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import cosmosicsImage from "@/assets/cms24.2.jpg";
-import innovationImage from "@/assets/project-innovation.jpg";
+import cosmosicsImage from "@/assets/cosmosics-stem.jpg";
+import innovationImage from "@/assets/vex-webinar.jpg";
 
 const ProjectsSection = () => {
   const projects = [

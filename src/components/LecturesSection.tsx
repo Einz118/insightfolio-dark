@@ -1,9 +1,9 @@
 import { Play, Clock, Users, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import lectureImage from "@/assets/lecture-session-1.jpg";
 import aiVexImage from "@/assets/cms25.1-2.jpg";
-import communityImage from "@/assets/IMG_6299-2.jpg";
+import programmingVexImage from "@/assets/programming-vex.jpg";
+import communityImage from "@/assets/building-community.jpg";
 
 const LecturesSection = () => {
   const lectures = [
@@ -19,7 +19,7 @@ const LecturesSection = () => {
     {
       title: "Programming in VEX AIM",
       description: "Interactive session exploring how digital technologies are reshaping traditional educational methodologies and practices.",
-      image: lectureImage,
+      image: programmingVexImage,
       duration: "1.5 hours",
       attendees: 38,
       date: "March 8, 2024",
