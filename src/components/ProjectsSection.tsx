@@ -16,7 +16,7 @@ const ProjectsSection = () => {
         duration: "6 months",
         locations: "5 communities"
       },
-      link: "#"
+      link: "https://www.facebook.com/"
     },
     {
       title: "VEX AIM & AI Application Webinar",
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
         duration: "2 weeks",
         locations: "Online Platform"
       },
-      link: "#"
+      link: "https://www"
     }
   ];
 

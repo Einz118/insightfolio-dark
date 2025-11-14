@@ -16,7 +16,7 @@ const AboutSection = () => {
   }, {
     icon: <Heart className="h-8 w-8 text-primary" />,
     title: "Accessibility",
-    description: "Making quality education accessible to learners from all backgrounds and circumstances."
+    description: "Making quality STEM education accessible to learners from all backgrounds and circumstances."
   }];
   return <section id="about" className="section-padding bg-gradient-to-br from-secondary/50 to-muted/30">
       <div className="max-w-7xl mx-auto">
@@ -37,7 +37,7 @@ const AboutSection = () => {
               and organizations to thrive in the digital age.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our multidisciplinary team combines expertise in education, technology, and community development 
+              Our multidisciplinary team combines expertise in education, engineering, and community development 
               to create solutions that are not only technically excellent but also pedagogically sound and 
               socially responsible.
             </p>
