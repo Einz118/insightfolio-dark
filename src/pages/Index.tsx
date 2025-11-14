@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import LecturesSection from "@/components/LecturesSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollToTop from "@/components/ScrollToTop";
+import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       </footer>
       
       <ScrollToTop />
+      <Chatbot />
     </div>
   );
 };
