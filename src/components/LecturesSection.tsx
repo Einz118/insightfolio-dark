@@ -1,38 +1,43 @@
 import { Play, Clock, Users, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 import aiVexImage from "@/assets/cms25.1-2.jpg";
 import programmingVexImage from "@/assets/programming-vex.jpg";
 import communityImage from "@/assets/building-community.jpg";
 
 const LecturesSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].lectures;
+  
   const lectures = [
     {
-      title: "Introduction to AI and VEX AIM",
-      description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications and VEX AIM robotics kit.",
+      title: t.aiVexTitle,
+      description: t.aiVexDesc,
       image: aiVexImage,
       duration: "2 hours",
       attendees: "20 students, 4 teachers",
       date: "September 17, 2025",
-      topics: ["AI Fundamentals", "Educational Applications", "Future Trends"]
+      topics: [t.aiFundamentals, t.educationalApplications, t.futureTrends]
     },
     {
-      title: "Programming in VEX AIM",
-      description: "Interactive session exploring how digital technologies are reshaping traditional educational methodologies and practices.",
+      title: t.programmingTitle,
+      description: t.programmingDesc,
       image: programmingVexImage,
       duration: "1.5 hours",
       attendees: 38,
       date: "March 8, 2024",
-      topics: ["Digital Tools", "Learning Analytics", "Best Practices"]
+      topics: [t.digitalTools, t.learningAnalytics, t.bestPractices]
     },
     {
-      title: "Building Inclusive Online Communities",
-      description: "Practical workshop on creating and maintaining inclusive digital learning environments that foster collaboration.",
+      title: t.communityTitle,
+      description: t.communityDesc,
       image: communityImage,
       duration: "3 hours",
       attendees: 52,
       date: "February 28, 2024",
-      topics: ["Community Building", "Accessibility", "Engagement Strategies"]
+      topics: [t.communityBuilding, t.accessibility, t.engagementStrategies]
     }
   ];
 
@@ -41,10 +46,10 @@ const LecturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-            Our <span className="text-glow">Lectures</span> & Workshops
+            {t.title} <span className="text-glow">{t.titleHighlight}</span> {t.subtitle}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up">
-            Professional development sessions and educational workshops designed to empower educators and learners with cutting-edge knowledge.
+            {t.description}
           </p>
         </div>
 
@@ -60,7 +65,7 @@ const LecturesSection = () => {
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Button size="lg" className="bg-white/20 backdrop-blur-sm border border-white/30">
                     <Play className="mr-2 h-4 w-4" />
-                    View Recording
+                    {t.viewRecording}
                   </Button>
                 </div>
               </div>
@@ -87,12 +92,12 @@ const LecturesSection = () => {
                   </div>
                   <div className="flex items-center gap-1 text-primary">
                     <Users className="h-4 w-4" />
-                    {lecture.attendees} attendees
+                    {lecture.attendees} {t.attendees}
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <div className="text-sm font-medium">Topics Covered:</div>
+                  <div className="text-sm font-medium">{t.topicsCovered}</div>
                   <div className="flex flex-wrap gap-2">
                     {lecture.topics.map((topic, topicIndex) => (
                       <span
@@ -110,16 +115,16 @@ const LecturesSection = () => {
         </div>
 
         <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20 text-center">
-          <h3 className="text-2xl font-bold mb-4">Interested in Our Training Programs?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t.callToActionTitle}</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            We offer customized training sessions and workshops for organizations looking to enhance their digital capabilities and educational practices.
+            {t.callToActionDesc}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="btn-hero">
-              Schedule a Workshop
+              {t.scheduleWorkshop}
             </Button>
             <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10">
-              View All Sessions
+              {t.viewAllSessions}
             </Button>
           </div>
         </div>

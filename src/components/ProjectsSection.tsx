@@ -1,16 +1,21 @@
 import { ExternalLink, Users, Calendar, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 import cosmosicsImage from "@/assets/cosmosics-stem.jpg";
 import innovationImage from "@/assets/vex-webinar.jpg";
 
 const ProjectsSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+  
   const projects = [
     {
-      title: "Cosmosics: STEM fair",
-      description: "Community outreach program providing digital literacy training to underserved populations, focusing on essential computer skills and internet safety.",
+      title: t.cosmosicsTitle,
+      description: t.cosmosicsDesc,
       image: cosmosicsImage,
-      tags: ["Community Service", "Digital Literacy", "Outreach"],
+      tags: [t.communityService, t.digitalLiteracy, t.outreach],
       stats: {
         participants: "150+",
         duration: "6 months",
@@ -19,10 +24,10 @@ const ProjectsSection = () => {
       link: "https://www.facebook.com/"
     },
     {
-      title: "VEX AIM & AI Application Webinar",
-      description: "Collaborative webinar where educators and students learn to programme VEX AIM and utilizing AI application",
+      title: t.vexTitle,
+      description: t.vexDesc,
       image: innovationImage,
-      tags: ["Community", "AI", "Collaboration"],
+      tags: [t.community, t.ai, t.collaboration],
       stats: {
         participants: "40+",
         duration: "2 weeks",
@@ -37,10 +42,10 @@ const ProjectsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-            Our <span className="text-glow">Projects</span>
+            {t.title} <span className="text-glow">{t.titleHighlight}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up">
-            Explore our impactful initiatives that are transforming communities through education and technology.
+            {t.description}
           </p>
         </div>
 
@@ -78,17 +83,17 @@ const ProjectsSection = () => {
                   <div className="text-center">
                     <Users className="h-5 w-5 text-primary mx-auto mb-1" />
                     <div className="text-sm font-semibold">{project.stats.participants}</div>
-                    <div className="text-xs text-muted-foreground">Participants</div>
+                    <div className="text-xs text-muted-foreground">{t.participants}</div>
                   </div>
                   <div className="text-center">
                     <Calendar className="h-5 w-5 text-primary mx-auto mb-1" />
                     <div className="text-sm font-semibold">{project.stats.duration}</div>
-                    <div className="text-xs text-muted-foreground">Duration</div>
+                    <div className="text-xs text-muted-foreground">{t.duration}</div>
                   </div>
                   <div className="text-center">
                     <MapPin className="h-5 w-5 text-primary mx-auto mb-1" />
                     <div className="text-sm font-semibold">{project.stats.locations}</div>
-                    <div className="text-xs text-muted-foreground">Locations</div>
+                    <div className="text-xs text-muted-foreground">{t.locations}</div>
                   </div>
                 </div>
                 
@@ -96,7 +101,7 @@ const ProjectsSection = () => {
                   variant="outline" 
                   className="w-full border-primary/50 text-primary hover:bg-primary/10 group"
                 >
-                  Learn More
+                  {t.learnMore}
                   <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardContent>
@@ -106,7 +111,7 @@ const ProjectsSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-6">
-            Want to collaborate on a project or learn more about our community initiatives?
+            {t.callToAction}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button 
@@ -116,13 +121,13 @@ const ProjectsSection = () => {
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Get In Touch
+              {t.getInTouch}
             </Button>
             <Button 
               className="btn-hero"
               onClick={() => window.location.href = '/gallery'}
             >
-              Gallery
+              {t.gallery}
             </Button>
           </div>
         </div>

@@ -6,8 +6,13 @@ import LecturesSection from "@/components/LecturesSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import Chatbot from "@/components/Chatbot";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const Index = () => {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -23,7 +28,7 @@ const Index = () => {
       <footer className="bg-secondary/30 border-t border-border/20 py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-muted-foreground">
-            © 2025 VerdEngineers. Transforming education through innovation.
+            {t.copyright}
           </p>
         </div>
       </footer>
