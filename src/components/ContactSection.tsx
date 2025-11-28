@@ -5,9 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = translations[language].contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,8 +37,8 @@ const ContactSection = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+        title: t.successTitle,
+        description: t.successDesc,
       });
       
       setFormData({
@@ -45,8 +49,8 @@ const ContactSection = () => {
       });
     } catch (error) {
       toast({
-        title: "Failed to send message",
-        description: "Please try again or contact us directly.",
+        title: t.errorTitle,
+        description: t.errorDesc,
         variant: "destructive",
       });
     } finally {
@@ -57,19 +61,19 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
-      title: "Email Us",
+      title: t.emailUs,
       details: "contact@verdengineers.com",
       action: "mailto:contact@verdengineers.com"
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Call Us",
+      title: t.callUs,
       details: "+84 936 279 118",
       action: "tel:+84936279118"
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Visit Us",
+      title: t.visitUs,
       details: "Hanoi, Vietnam",
       action: "#"
     }
@@ -80,17 +84,17 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-            Get In <span className="text-glow">Touch</span>
+            {t.title} <span className="text-glow">{t.titleHighlight}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-slide-up">
-            Ready to transform education together? Let's discuss how we can collaborate to create meaningful impact.
+            {t.description}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold mb-6">{t.contactInfo}</h3>
             
             {contactInfo.map((info, index) => (
               <Card key={index} className="card-gradient hover:scale-105 transition-transform duration-300">
@@ -113,12 +117,11 @@ const ContactSection = () => {
               </Card>
             ))}
 
-            {/* Social Links */}
             <Card className="card-gradient">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Linkedin className="h-5 w-5 text-primary" />
-                  Connect With Us
+                  {t.connectWith}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -130,7 +133,7 @@ const ContactSection = () => {
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    <span>Company LinkedIn</span>
+                    <span>{t.companyLinkedIn}</span>
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                   <a
@@ -140,7 +143,7 @@ const ContactSection = () => {
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    <span>Founder's Profile</span>
+                    <span>{t.founderProfile}</span>
                     <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </div>
@@ -148,18 +151,16 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
             <Card className="card-gradient">
               <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                <CardTitle className="text-2xl">{t.sendMessage}</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
-                        Name *
+                        {t.name} *
                       </label>
                       <Input
                         id="name"
@@ -172,7 +173,7 @@ const ContactSection = () => {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
-                        Email *
+                        {t.email} *
                       </label>
                       <Input
                         id="email"
@@ -188,7 +189,7 @@ const ContactSection = () => {
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium">
-                      Subject *
+                      {t.subject} *
                     </label>
                     <Input
                       id="subject"
@@ -202,7 +203,7 @@ const ContactSection = () => {
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Message *
+                      {t.message} *
                     </label>
                     <Textarea
                       id="message"
@@ -220,13 +221,12 @@ const ContactSection = () => {
                     disabled={isSubmitting}
                     className="btn-hero w-full group"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t.sending : t.sendButton}
                     <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </form>
               </CardContent>
             </Card>
-          </div>
         </div>
       </div>
     </section>

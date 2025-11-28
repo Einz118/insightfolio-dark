@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 
 interface Message {
   role: "user" | "assistant";
@@ -12,11 +14,14 @@ interface Message {
 }
 
 const Chatbot = () => {
+  const { language } = useLanguage();
+  const t = translations[language].chatbot;
+  
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm here to help you learn about VerdEngineers. Ask me anything about our programs, lectures, or how to get involved!"
+      content: t.initialMessage
     }
   ]);
   const [input, setInput] = useState("");
@@ -58,7 +63,7 @@ const Chatbot = () => {
       });
       setMessages(prev => [...prev, { 
         role: "assistant", 
-        content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment." 
+        content: t.error
       }]);
     } finally {
       setIsLoading(false);
@@ -89,8 +94,8 @@ const Chatbot = () => {
         <div className="fixed bottom-24 left-8 z-50 w-80 sm:w-96 h-[500px] bg-background border border-border rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-4 rounded-t-lg">
-            <h3 className="font-semibold text-lg">VerdEngineers Assistant</h3>
-            <p className="text-xs opacity-90">Ask me anything about our programs</p>
+            <h3 className="font-semibold text-lg">{t.assistant}</h3>
+            <p className="text-xs opacity-90">{t.subtitle}</p>
           </div>
 
           {/* Messages */}
@@ -133,7 +138,7 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
+                placeholder={t.placeholder}
                 disabled={isLoading}
                 className="flex-1"
               />

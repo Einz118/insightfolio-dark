@@ -1,10 +1,20 @@
 import { useState } from "react";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X, ExternalLink, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language].nav;
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -28,23 +38,23 @@ const Navigation = () => {
   };
   const navItems = [{
     id: "home",
-    label: "Home"
+    label: t.home
   }, {
     id: "about",
-    label: "About Us"
+    label: t.about
   }, {
     id: "projects",
-    label: "Projects"
+    label: t.projects
   }, {
     id: "lectures",
-    label: "Lectures"
+    label: t.lectures
   }, {
     id: "store",
-    label: "Store",
+    label: t.store,
     href: "/store"
   }, {
     id: "contact",
-    label: "Contact"
+    label: t.contact
   }];
   return <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -68,8 +78,24 @@ const Navigation = () => {
               ))}
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors">
                 <ExternalLink size={16} />
-                LinkedIn
+                {t.linkedin}
               </a>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="gap-2">
+                    <Globe size={16} />
+                    {language === "en" ? "EN" : "VI"}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setLanguage("en")}>
+                    🇬🇧 English
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage("vi")}>
+                    🇻🇳 Tiếng Việt
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 
@@ -94,8 +120,26 @@ const Navigation = () => {
                 </button>
               ))}
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-primary hover:text-accent transition-colors">
-                LinkedIn
+                {t.linkedin}
               </a>
+              <div className="px-3 py-2">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="sm" className="w-full justify-start gap-2">
+                      <Globe size={16} />
+                      {language === "en" ? "🇬🇧 English" : "🇻🇳 Tiếng Việt"}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    <DropdownMenuItem onClick={() => setLanguage("en")}>
+                      🇬🇧 English
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage("vi")}>
+                      🇻🇳 Tiếng Việt
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </div>
           </div>}
       </div>
