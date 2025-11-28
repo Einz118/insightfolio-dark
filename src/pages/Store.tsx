@@ -7,7 +7,7 @@ import lectureImage from "@/assets/lecture-session-1.jpg";
 const Store = () => {
   const lectures = [
     {
-      title: "Introduction to AI and VEX AIM",
+      title: "Mentoring service through ",
       description: "Comprehensive workshop covering the fundamentals of artificial intelligence applications and VEX AIM robotics kit.",
       image: lectureImage,
       duration: "2 hours",
@@ -131,7 +131,7 @@ const Store = () => {
       <footer className="bg-secondary/30 border-t border-border/20 py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 VerdEngineers. Transforming education through innovation.
+            © 2025 VerdEngineers. Transforming education through innovation.
           </p>
         </div>
       </footer>
